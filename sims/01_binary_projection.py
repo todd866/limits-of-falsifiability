@@ -9,7 +9,7 @@ Demonstrates Eq. 1 from the paper:
 Shows that single binary tests become uninformative as dimensionality increases,
 while multivariate approaches maintain discriminability.
 
-Paper: "The Limits of Falsifiability" (BioSystems 258, 2025)
+Papers: "The Geometry of Biological Shadows" (Paper 2) & "The Limits of Falsifiability" (Paper 1, BioSystems 258, 2025)
 Author: Ian Todd
 """
 

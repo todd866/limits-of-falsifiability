@@ -11,7 +11,7 @@ Shows that falsifiability varies with dimensionality and signal strength,
 identifying the regime where Popperian logic applies versus where
 ensemble-based inference is required.
 
-Paper: "The Limits of Falsifiability" (BioSystems 258, 2025)
+Papers: "The Geometry of Biological Shadows" (Paper 2) & "The Limits of Falsifiability" (Paper 1, BioSystems 258, 2025)
 Author: Ian Todd
 """
 

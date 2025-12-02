@@ -11,7 +11,7 @@ that depends on the Lyapunov exponent and measurement precision.
 At quantum-limited precision, this horizon is finite and cannot be
 extended by any improvement in measurement technology.
 
-Paper: "The Limits of Falsifiability" (BioSystems 258, 2025)
+Papers: "The Geometry of Biological Shadows" (Paper 2) & "The Limits of Falsifiability" (Paper 1, BioSystems 258, 2025)
 Author: Ian Todd
 """
 

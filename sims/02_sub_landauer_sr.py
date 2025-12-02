@@ -11,7 +11,7 @@ Shows that signals below the Landauer threshold for individual detection
 become detectable when pooled across populations - the "ensemble fingerprint"
 that the paper argues is the appropriate observable for sub-Landauer patterns.
 
-Paper: "The Limits of Falsifiability" (BioSystems 258, 2025)
+Papers: "The Geometry of Biological Shadows" (Paper 2) & "The Limits of Falsifiability" (Paper 1, BioSystems 258, 2025)
 Author: Ian Todd
 """
 
