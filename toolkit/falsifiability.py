@@ -74,6 +74,8 @@ try:
 except ImportError:
     HAS_SCANPY = False
 
+__version__ = "1.0.0"
+
 
 # =============================================================================
 # SECTION 1: METRICS
@@ -590,7 +592,7 @@ def plot_metrics_dashboard(results, save_path=None):
 # =============================================================================
 # High-level analysis pipelines
 
-def analyze_dataset(data, name="Dataset", verbose=True):
+def analyze_dataset(data, name="Dataset", verbose=True, embedding_fn=None, random_state=42):
     """
     Run full falsifiability analysis on a dataset.
 
@@ -602,6 +604,12 @@ def analyze_dataset(data, name="Dataset", verbose=True):
     data : array (n_samples, n_features)
     name : str, dataset name for display
     verbose : bool, print progress
+    embedding_fn : callable, optional
+        Custom embedding function. Should take (n_samples, n_features) array
+        and return (n_samples, 2) array. If None, uses t-SNE.
+        Example: lambda X: umap.UMAP().fit_transform(X)
+    random_state : int, optional
+        Random seed for reproducibility. Default 42.
 
     Returns
     -------
@@ -615,6 +623,8 @@ def analyze_dataset(data, name="Dataset", verbose=True):
     """
     if not HAS_SKLEARN:
         raise ImportError("sklearn required for analyze_dataset")
+
+    rng = np.random.default_rng(random_state)
 
     if verbose:
         print(f"\nAnalyzing: {name}")
@@ -639,20 +649,23 @@ def analyze_dataset(data, name="Dataset", verbose=True):
     if verbose:
         print(f"    D_sys = {d_sys:.1f}")
 
-    # 2. PCA + t-SNE
+    # 2. PCA + embedding
     if verbose:
         print("  Computing 2D embedding...")
     n_pca = min(50, data_filt.shape[1] - 1)
-    pca = PCA(n_components=n_pca)
+    pca = PCA(n_components=n_pca, random_state=random_state)
     data_pca = pca.fit_transform(data_filt)
 
-    # Subsample for t-SNE
+    # Subsample for embedding
     n_sub = min(3000, len(data_pca))
-    idx = np.random.choice(len(data_pca), n_sub, replace=False)
+    idx = rng.choice(len(data_pca), n_sub, replace=False)
     data_pca_sub = data_pca[idx]
 
-    tsne = TSNE(n_components=2, perplexity=30, random_state=42, max_iter=500)
-    data_2d = tsne.fit_transform(data_pca_sub)
+    if embedding_fn is not None:
+        data_2d = embedding_fn(data_pca_sub)
+    else:
+        tsne = TSNE(n_components=2, perplexity=30, random_state=random_state, max_iter=500)
+        data_2d = tsne.fit_transform(data_pca_sub)
 
     # 3. Aliasing
     if verbose:
@@ -687,6 +700,77 @@ def analyze_dataset(data, name="Dataset", verbose=True):
         'coverage': coverage,
         'data_pca': data_pca_sub,
         'data_2d': data_2d,
+    }
+
+
+def analyze_with_embedding(data_high_d, data_2d, name="Dataset", verbose=True, k=10):
+    """
+    Analyze aliasing for a pre-computed embedding.
+
+    Use this when you already have a 2D embedding (e.g., from scanpy's
+    adata.obsm['X_umap']) and want to measure how much it lies.
+
+    Parameters
+    ----------
+    data_high_d : array (n_samples, n_features)
+        High-dimensional data (e.g., PCA coordinates, not raw counts)
+    data_2d : array (n_samples, 2)
+        Pre-computed 2D embedding
+    name : str
+        Dataset name for display
+    verbose : bool
+        Print progress
+    k : int
+        Number of neighbors for aliasing computation
+
+    Returns
+    -------
+    results : dict with keys:
+        - d_sys, aliasing, cluster_aliasing, coverage
+
+    Example
+    -------
+    >>> import scanpy as sc
+    >>> adata = sc.read_h5ad("my_data.h5ad")
+    >>> results = analyze_with_embedding(
+    ...     adata.obsm['X_pca'],
+    ...     adata.obsm['X_umap'],
+    ...     name="My dataset"
+    ... )
+    >>> print(f"Aliasing: {results['aliasing']:.1%}")
+    """
+    if verbose:
+        print(f"\nAnalyzing: {name}")
+        print("=" * 50)
+
+    # D_sys
+    d_sys, eigenvalues = participation_ratio(data_high_d)
+    if verbose:
+        print(f"  D_sys = {d_sys:.1f}")
+
+    # Aliasing
+    aliasing, jaccard = compute_aliasing(data_high_d, data_2d, k=k)
+    if verbose:
+        print(f"  Aliasing = {aliasing:.1%}")
+
+    # Cluster aliasing
+    cluster_aliasing, _, _ = compute_cluster_aliasing(data_high_d, data_2d)
+    if verbose:
+        print(f"  Cluster aliasing = {cluster_aliasing:.1%}")
+
+    # Coverage
+    coverage, _, _ = compute_coverage(data_high_d, n_bins=3, n_dims=20)
+    if verbose:
+        print(f"  Coverage = {coverage:.2e}")
+
+    return {
+        'name': name,
+        'd_sys': d_sys,
+        'eigenvalues': eigenvalues,
+        'aliasing': aliasing,
+        'jaccard_similarities': jaccard,
+        'cluster_aliasing': cluster_aliasing,
+        'coverage': coverage,
     }
 
 

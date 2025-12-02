@@ -152,6 +152,58 @@ results = analyze_dataset(data, "My Dataset")
 plot_hairball(results['data_2d'], results['data_pca'])
 ```
 
+### Scanpy integration (existing AnnData)
+
+If you already have an AnnData object with UMAP/t-SNE computed:
+
+```python
+from falsifiability import analyze_with_embedding
+import scanpy as sc
+
+# Load your data
+adata = sc.read_h5ad("my_data.h5ad")
+
+# Use existing PCA and UMAP
+results = analyze_with_embedding(
+    adata.obsm['X_pca'],
+    adata.obsm['X_umap'],
+    name="My dataset"
+)
+
+print(f"D_sys: {results['d_sys']:.1f}")
+print(f"Aliasing: {results['aliasing']:.1%}")
+```
+
+### Custom embedding function
+
+Use UMAP instead of t-SNE, or any custom embedding:
+
+```python
+import umap
+from falsifiability import analyze_dataset
+
+results = analyze_dataset(
+    data,
+    "My Dataset",
+    embedding_fn=lambda X: umap.UMAP(n_neighbors=15).fit_transform(X),
+    random_state=42  # For reproducibility
+)
+```
+
+---
+
+## Paper Figures → Scripts
+
+| Figure (Paper 2) | Script | Function |
+|------------------|--------|----------|
+| Fig. 1 (Shadow box) | `demo_lorenz.py` | `run_shadow_box_analysis` |
+| Fig. 2 (scRNA aliasing) | `demo_scrna.py` | `run_single_dataset` |
+| Fig. 3 (Regime diagram) | `demo_regime.py` | `run_regime_analysis` |
+| Fig. 4 (Non-ergodic memory) | `demo_memory.py` | `run_nonergodic_demo` |
+| Table 3 (Multi-dataset) | `demo_scrna.py` | `run_multi_dataset` |
+
+Use `random_state=42` to approximately reproduce paper figures.
+
 ---
 
 ## The Philosophical Point
