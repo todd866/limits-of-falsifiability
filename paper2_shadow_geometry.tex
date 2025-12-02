@@ -358,6 +358,19 @@ The exact threshold ($\sim$10--20 dimensions) is model-dependent: the specific g
 
 This is not a failure of science but a recognition of scale-dependent epistemology. Different regimes require different methods.
 
+\subsection{Recommendations for Practitioners}
+
+We do not argue that dimension reduction should be abandoned. t-SNE, UMAP, and related methods remain valuable for visualization and exploratory analysis. Rather, we propose that the \textbf{Topological Aliasing Rate} be reported as a standard quality metric alongside 2D visualizations, analogous to how sequencing depth or mapping quality are reported in genomics.
+
+Practical guidelines:
+\begin{itemize}
+    \item \textbf{Aliasing $<$ 30\%}: Visual clusters likely reflect high-dimensional topology. Binary hypotheses about cluster membership may be testable in the projection.
+    \item \textbf{Aliasing 30--60\%}: Clusters should be interpreted with caution. Hypothesis testing should be performed in the original high-dimensional space (e.g., PCA coordinates) rather than the 2D embedding.
+    \item \textbf{Aliasing $>$ 60\%}: The 2D projection is a ``visual convenience'' only. Cluster boundaries are more wrong than right. All quantitative analysis must occur in high-dimensional space.
+\end{itemize}
+
+The \texttt{falsifiability} toolkit (see Code Availability) computes aliasing rates for any high-dimensional dataset with a single function call, enabling researchers to calibrate their interpretive confidence before drawing biological conclusions.
+
 \section{Conclusion}
 
 We have provided computational tools to measure the limits of falsifiability that were theoretically derived in \cite{todd2025limits}. The key results are:
@@ -389,7 +402,7 @@ The author declares no competing interests.
 This paper was developed using Claude 4.5 Opus (Anthropic), GPT-5.1 Pro (OpenAI), and Gemini 3 Pro (Google) for editing, code development, and refining arguments. The author reviewed and edited all content and takes full responsibility for the final article.
 
 \section*{Code availability}
-All simulation code is available at \url{https://github.com/todd866/limits-of-falsifiability}.
+All simulation code and the \texttt{falsifiability} Python library are available at \url{https://github.com/todd866/limits-of-falsifiability} and archived on Zenodo (DOI: \href{https://doi.org/10.5281/zenodo.17791874}{10.5281/zenodo.17791874}).
 
 \begin{thebibliography}{99}
 
