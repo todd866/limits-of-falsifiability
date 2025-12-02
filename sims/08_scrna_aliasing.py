@@ -278,12 +278,32 @@ def run_simulation():
     ax.legend()
     ax.grid(alpha=0.3)
 
-    # Panel B: t-SNE embedding
+    # Panel B: t-SNE embedding with "Hairball of Truth"
     ax = axes[0, 1]
-    ax.scatter(data_2d[:, 0], data_2d[:, 1], c='#457B9D', s=1, alpha=0.5)
+    ax.scatter(data_2d[:, 0], data_2d[:, 1], c='#457B9D', s=1, alpha=0.3, zorder=1)
+
+    # Draw the "Hairball of Truth" - lines from random cells to their TRUE high-D neighbors
+    np.random.seed(42)
+    n_demo_cells = 15  # Show a few example cells
+    demo_idx = np.random.choice(len(data_2d), n_demo_cells, replace=False)
+
+    # Get high-D neighbors for demo cells
+    nn_high = NearestNeighbors(n_neighbors=6, algorithm='ball_tree')
+    nn_high.fit(data_pca[idx_sub])
+    _, neighbors_high = nn_high.kneighbors(data_pca[idx_sub][demo_idx])
+
+    # Draw lines to true neighbors (they'll cross the "empty" space)
+    for i, cell_idx in enumerate(demo_idx):
+        cell_pos = data_2d[cell_idx]
+        for neighbor_idx in neighbors_high[i, 1:]:  # Skip self
+            neighbor_pos = data_2d[neighbor_idx]
+            ax.plot([cell_pos[0], neighbor_pos[0]], [cell_pos[1], neighbor_pos[1]],
+                   'r-', alpha=0.4, linewidth=0.5, zorder=2)
+        ax.scatter(cell_pos[0], cell_pos[1], c='red', s=20, zorder=3, edgecolor='black')
+
     ax.set_xlabel('t-SNE 1')
     ax.set_ylabel('t-SNE 2')
-    ax.set_title(f'B. 2D Embedding (D_obs = 2)\n({n_subsample} cells)', fontweight='bold')
+    ax.set_title(f'B. The Shadow Lie\n(red lines = TRUE neighbors in high-D)', fontweight='bold')
     ax.set_xticks([])
     ax.set_yticks([])
 
