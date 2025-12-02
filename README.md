@@ -1,7 +1,8 @@
 # The Limits of Falsifiability
 
+[![Tests](https://github.com/todd866/limits-of-falsifiability/actions/workflows/tests.yml/badge.svg)](https://github.com/todd866/limits-of-falsifiability/actions/workflows/tests.yml)
 [![DOI](https://zenodo.org/badge/1107632667.svg)](https://doi.org/10.5281/zenodo.17791874)
-[![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
+[![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 [![Regime: Ensemble](https://img.shields.io/badge/Regime-Ensemble-red.svg)](#the-falsifiability-regimes)
 
