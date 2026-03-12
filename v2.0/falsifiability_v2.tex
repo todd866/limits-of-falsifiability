@@ -26,7 +26,7 @@ Sydney, NSW, Australia\\
 \maketitle
 
 \begin{abstract}
-Karl Popper's falsifiability criterion assumes that scientific hypotheses can be reduced to binary tests. We show this assumption is \emph{scale-dependent} and can \emph{saturate} in high-dimensional biological systems operating near physical measurement limits. But the limitation runs deeper than measurement: \emph{falsifiability itself depends on axiomatic choices about how questions are structured}, and these framework choices are themselves projections that cannot be tested from within the framework. In neural networks, much relevant information exists as patterns below the Landauer threshold for irreversible bit recording---signals too weak for individual neurons to detect but detectable when pooled across populations. These sub-threshold patterns cannot be projected into binary outcomes without destroying their causal structure. We develop a framework connecting dimensionality, thermodynamic measurement limits, framework dependence, and biological epistemology, showing that Popperian logic represents a special case applicable only to low-dimensional systems with strong signals \emph{and} shared axiomatic structure. The ``unreasonable effectiveness of mathematics'' in physics reflects selection bias toward domains where projection loss is small; biology is where this selection breaks down. Our analysis has implications for neuroscience, consciousness, and any domain where the system dimensionality exceeds the observer's representational capacity, motivating a shift from single-case hypothesis tests to multi-scale, ensemble-based inference that acknowledges the framework-dependence of all empirical claims.
+Scientific inquiry repeatedly compresses rich observations into decision boundaries (accept/reject, significant/non-significant, model A/model B). We argue that this compression is \emph{scale-dependent} and can \emph{saturate} in high-dimensional biological systems operating near fundamental measurement limits. But the limitation runs deeper than measurement: \emph{falsifiability itself depends on axiomatic choices about how questions are structured}, and these framework choices are themselves projections that cannot be tested from within the framework. In neural networks, much relevant information exists as patterns below reliable single-event readout energy (with $k_B T \ln 2$ as reference scale)---signals that no single detector can reliably read, yet detectable when pooled across populations. We do \emph{not} claim such phenomena are unmeasurable in aggregate; we claim \emph{single-event bit-level readout} is unreliable, so only ensemble/statistical observables are accessible. These sub-threshold patterns cannot be projected into binary outcomes without potentially destroying their functionally relevant causal structure. We develop a framework connecting dimensionality, thermodynamic constraints on reliable readout, framework dependence, and biological epistemology, showing that Popperian-style demarcation is most effective in low-dimensional systems with strong signals \emph{and} shared axiomatic structure. The ``unreasonable effectiveness of mathematics'' in physics reflects selection bias toward domains where projection loss is small; biology is where this selection breaks down. We propose a scale-dependent falsifiability criterion (Section 9) and motivate a shift from single-case hypothesis tests to multi-scale, ensemble-based inference that makes framework assumptions explicit.
 \end{abstract}
 
 \textbf{Keywords:} falsifiability, dimensionality, Landauer limit, framework dependence, Duhem-Quine thesis, stochastic resonance, consciousness, biological epistemology
@@ -42,7 +42,7 @@ However, recent advances in our understanding of biological complexity and physi
 This paper identifies three distinct levels at which falsifiability breaks down:
 
 \begin{enumerate}
-\item \textbf{Physical measurement limits.} The Landauer principle establishes that recording one bit of information requires a minimum energy of $k_B T \ln 2$ \cite{landauer1961}. Many biological patterns exist below this threshold---causally potent yet unmeasurable as discrete states.
+\item \textbf{Physical measurement limits.} The Landauer principle sets a lower bound on irreversible bit erasure ($\sim k_B T \ln 2$); in biological settings it serves as a reference scale for reliable single-event discrimination under thermal noise \cite{landauer1961}. Many biological patterns exist below this threshold---causally potent yet not reliably readable as individual bits.
 
 \item \textbf{Dimensional projection loss.} High-dimensional systems projected onto low-dimensional observations lose almost all information. A binary test on a 100-neuron circuit preserves less than 1\% of the information content.
 
@@ -51,20 +51,32 @@ This paper identifies three distinct levels at which falsifiability breaks down:
 
 The third level is the deepest and most often overlooked. Even in domains where measurement is possible and dimensionality is manageable, falsifiability remains relative to a framework that cannot itself be falsified from within.
 
+\textbf{Notation and definitions.} We use the following throughout:
+\begin{itemize}
+\item $X$: System state space (high-dimensional)
+\item $Y$: Observation space (raw measurements)
+\item $Z$: Representation space (processed statistics, model outputs)
+\item $\mathcal{F} = (M, R, D)$: A \emph{framework}, where $M: X \to Y$ is measurement, $R: Y \to Z$ is representation, and $D: Z \to \{0,1\}$ is demarcation
+\item \emph{Projection loss}: $\mathcal{L}(\mathcal{F}) := H(X) - I(X;Z)$, the information about $X$ that is unrecoverable after passing through the pipeline $X \to Y \to Z$. By the data-processing inequality, $I(X;Z) \leq I(X;Y) \leq H(X)$; each stage cannot increase recoverable information about $X$. We use this quantity qualitatively; no rigorous cross-domain quantification exists.
+\item \emph{Binary epistemology}: Any methodology that forces partitions on $X$ (accept/reject, significant/non-significant)
+\end{itemize}
+
 \subsection{The ``Unreasonable Effectiveness'' as Selection Bias}
 
 Eugene Wigner famously noted the ``unreasonable effectiveness of mathematics in the natural sciences'' \cite{wigner1960}---the surprising correspondence between abstract mathematical structures and physical reality. We propose a partial explanation: physics has historically selected for systems where mathematical description works well.
 
-Any mathematical description is necessarily finite-dimensional: one can only write finitely many symbols, equations, and variables. Real systems, especially biological ones, have state spaces of enormous or effectively infinite dimension. Every mathematical model is already a projection, a shadow of the actual dynamics.
+Any \emph{implemented} model has finite description length---finite parameters, finite precision, finite compute---and hence defines a finite-information projection of the system. Real systems, especially biological ones, have state spaces of enormous or effectively infinite dimension. Every mathematical model is already a projection, a shadow of the actual dynamics.
 
 Physics appears successful partly through selection bias: we call ``physics'' the domains where projection loss is small enough for precise prediction---isolated systems, controlled conditions, symmetric situations where relevant degrees of freedom are few. The success of mathematics in physics does not demonstrate that mathematical description is universally adequate; it demonstrates that we have been studying the domains where it is adequate.
 
 Biology is where projection loss becomes undeniable. Living systems maintain high-dimensional internal states that exceed observational access---not as a limitation of current technology, but as part of what makes them alive. The persistent difficulty of reducing biology to physics, the tendency of organisms to be ``more than the sum of their parts,'' may reflect a genuine feature of the subject matter rather than temporary limitation.
 
+These considerations motivate a key result developed in Section 9: \emph{scale-dependent falsifiability}. A hypothesis is falsifiable only when the energy scale of relevant patterns exceeds fundamental measurement thresholds, when the dimensionality is low enough for projection loss to be acceptable, \emph{and} when framework assumptions are shared. Enzyme kinetics admits falsification; consciousness may not.
+
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.8\textwidth]{figures/fig_wigner_selection.pdf}
-\caption{\textbf{The ``Unreasonable Effectiveness'' as Selection Bias (Schematic Representation).} Domains studied by physics (green) cluster where projection loss is small---where finite-dimensional mathematical descriptions capture most of the relevant dynamics. Biology, consciousness, and social systems occupy the high projection-loss regime where mathematical description fails. The apparent success of mathematics in physics reflects selection for tractable domains, not a deep truth about the mathematical nature of reality. \emph{Note: Domain positions are illustrative; no rigorous quantification of ``projection loss'' exists across these diverse fields. The figure visualizes the qualitative argument, not empirical measurements.}}
+\caption{\textbf{The ``Unreasonable Effectiveness'' as Selection Bias (Schematic Representation).} Domains studied by physics (green) cluster where projection loss is small---where finite-dimensional mathematical descriptions capture most of the relevant dynamics. Biology, consciousness, and social systems occupy the high projection-loss regime where mathematical description fails. The apparent success of mathematics in physics reflects selection for tractable domains, not a deep truth about the mathematical nature of reality. \emph{Note: Key domain positions are manually placed to illustrate the qualitative claim; no rigorous quantification of ``projection loss'' exists across these diverse fields. The figure visualizes the argument, not empirical measurements.}}
 \label{fig:wigner}
 \end{figure}
 
@@ -92,13 +104,17 @@ Consider an analogy. A three-dimensional object casts different shadows on diffe
 
 Similarly, researchers in different disciplines, or even within the same discipline using different paradigms, are projecting high-dimensional reality onto different low-dimensional coordinate systems. Their disagreements may not be resolvable by evidence because they are not making claims in the same framework.
 
+\textbf{Definition (Framework).} A \emph{framework} $\mathcal{F}$ is a triple $(M,R,D)$ mapping $X \to Y \to Z \to \{0,1\}$, where $M: X \to Y$ is measurement, $R: Y \to Z$ is representation, and $D: Z \to \{0,1\}$ is the demarcation judgment. Here $X$ is the high-dimensional state space of the system, $Y$ is the space of raw observations, $Z$ is the space of processed representations (statistics, model outputs). Each map involves dimensional reduction: $\dim(Y) < \dim(X)$, $\dim(Z) < \dim(Y)$, and the final decision is one-dimensional. The total information loss compounds across stages. Framework dependence enters at every step: the choice of $M$ (what to measure), the choice of $R$ (how to represent), and the choice of $D$ (where to draw the boundary).
+
+Each choice of $(M,R,D)$ induces a \emph{partition} on $X$: states that map to the same final decision are equivalent under that framework. Two frameworks are \emph{incompatible} when they induce different partitions, so ``the same hypothesis'' is not even well-defined across frameworks. Falsifiability is defined relative to $\mathcal{F}$, because a hypothesis is a statement about the induced partition.
+
 This is not relativism. The underlying reality exists independently of the frameworks used to describe it. But \emph{falsification is framework-relative}. A hypothesis can only be falsified with respect to a given set of background assumptions, and those assumptions cannot themselves be falsified within the framework that presupposes them.
 
 \subsection{Why Physics ``Works''}
 
 Physics appears to escape this problem because its framework assumptions are unusually stable and widely shared. Physicists agree on what counts as a measurement, what the relevant variables are, and how precision is assessed. The axiomatic structure is settled.
 
-But this stability is not a feature of nature; it is a feature of the discipline's sociology. Physics has historically focused on domains where:
+But this stability is not solely a feature of nature; it also reflects disciplinary convergence and domain selection. Even within physics, the domains where mathematical description struggles---fully developed turbulence, strongly correlated many-body systems, climate dynamics---are precisely those with high effective dimensionality and contested framework choices. Physics has historically focused on domains where:
 
 \begin{enumerate}
 \item System dimensionality is low or effectively reducible
@@ -118,7 +134,7 @@ This is not a counsel of despair. It is a recognition that empirical knowledge i
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=\textwidth]{figures/fig_framework_projection.pdf}
-\caption{\textbf{Framework as Projection.} A cylinder (A) casts different shadows depending on projection angle. Framework 1 (B) observes only the XY projection and concludes the object is circular. Framework 2 (C) observes only the XZ projection and concludes it is rectangular. Both projections are ``correct'' given their assumptions, but they generate incompatible hypotheses. Neither can falsify the other because they are not making claims in the same dimensional subspace.}
+\caption{\textbf{Framework as Projection.} A cylinder (A) casts different shadows depending on projection angle. Framework 1 (B) observes only the XY projection and concludes the object is circular. Framework 2 (C) observes only the XZ projection and concludes it is rectangular. Both projections are ``correct'' given their assumptions, but they generate incompatible hypotheses. Neither can falsify the other \emph{without adopting a shared higher-dimensional measurement} because they are not making claims in the same dimensional subspace.}
 \label{fig:framework}
 \end{figure}
 
@@ -126,29 +142,36 @@ This is not a counsel of despair. It is a recognition that empirical knowledge i
 
 \subsection{Implicit Assumptions in Biological Falsifiability}
 
-Popper's framework contains an implicit assumption particularly problematic for biology: that any meaningful biological hypothesis can be reduced to a falsifiable statement, essentially a binary decision. While Popper concerned himself with \textit{in principle} falsifiability, we show that physical laws impose \textit{in principle} limits on what biological phenomena can be falsified.
+Scientific demarcation practice typically induces a decision boundary, even when measurement and inference are continuous. While Popper concerned himself with \textit{in principle} falsifiability, we show that physical laws impose \textit{in principle} limits on what biological phenomena can be falsified.
 
-\textbf{Clarification on Popper and binary tests.} A skeptical reader may object that Popper's falsifiability is a \emph{logical relation} between hypothesis and observation---observations can be continuous, noisy, statistical---and that modern ``Popperian'' practice often uses statistical falsification (likelihood ratios, posterior predictive checks) rather than literal single-bit measurements. We accept this clarification but note it does not dissolve our argument. The epistemic bottleneck is not in the measurement device but in the \emph{demarcation logic}: even if raw measurements are rich, the scientific process ultimately forces a decision boundary (accept/reject, significant/non-significant, model A/model B). It is this forced projection from continuous evidence to discrete conclusion that creates information loss, regardless of how sophisticated the intermediate analysis.
+\textbf{Clarification on Popper and binary tests.} A skeptical reader may object that Popper's falsifiability is a \emph{logical relation} between hypothesis and observation---observations can be continuous, noisy, statistical---and that modern ``Popperian'' practice often uses statistical falsification (likelihood ratios, posterior predictive checks) rather than literal single-bit measurements. We accept this clarification but note it does not dissolve our argument. The epistemic bottleneck is not in the measurement device but in the \emph{demarcation logic}: even if raw measurements are rich, the scientific process ultimately forces a decision boundary (accept/reject, significant/non-significant, model A/model B). Even when conclusions are graded (effect sizes, posterior odds), \emph{action}---accept a model, fund a project, approve a drug, revise a theory---still induces a boundary. It is this forced projection from continuous evidence to discrete conclusion that creates information loss, regardless of how sophisticated the intermediate analysis.
 
-\textbf{Bayesianism does not escape.} One might hope that Bayesian inference---which maintains full posterior distributions rather than forcing binary decisions---circumvents this problem. It does not. Bayesian methods face their own high-dimensional crises: the curse of dimensionality makes posterior computation intractable, priors become effectively uninformative or encode unjustified assumptions, MCMC samplers fail to mix, and variational approximations introduce uncontrolled bias. More fundamentally: if the posterior cannot be computed or even represented, Bayesian analysis cannot begin. The promise of ``maintaining full distributions'' is vacuous when the distribution lives in a space too large to explore. In high-dimensional biological systems, Bayesian inference does not preserve information---it projects onto a tractable subspace, just as frequentist methods do. The framework dependence runs deeper than the choice of statistical paradigm.
+\textbf{Bayesianism does not escape.} One might hope that Bayesian inference---which maintains full posterior distributions rather than forcing binary decisions---circumvents this problem. In the regimes we consider (high dimensionality, weak or uninformative priors, limited computational budget), it does not. Bayesian methods face their own high-dimensional crises: the curse of dimensionality often makes posterior computation intractable, priors become effectively uninformative or encode unjustified assumptions, MCMC samplers frequently fail to mix, and variational approximations introduce uncontrolled bias. More fundamentally: if the posterior cannot be computed or even represented, Bayesian analysis cannot begin. The promise of ``maintaining full distributions'' becomes vacuous when the distribution lives in a space too large to explore. In high-dimensional biological systems with non-identifiability and limited data, Bayesian inference does not preserve information---it projects onto a tractable subspace, just as frequentist methods do. Moreover, even with infinite computational resources, Bayesian inference is limited by the \emph{support of the prior}: if the hypothesis space itself is a low-dimensional projection of the system's true degrees of freedom, the posterior will converge on the ``best fit'' within that projection, not the truth. The framework dependence runs deeper than the choice of statistical paradigm.
 
 Consider a hypothesis about protein folding: ``Protein X folds via pathway Y.'' Testing this proposition requires bringing the protein to a state where folding intermediates are discretely resolvable, measuring without disrupting the folding process, and projecting the multi-dimensional folding landscape onto a binary decision axis. Yet protein folding occurs on a rugged energy landscape with astronomical numbers of conformational states \cite{dill2012}. The act of measurement necessarily perturbs this landscape, potentially switching the protein to alternative folding pathways. Moreover, the binary projection destroys information about parallel pathways, transient intermediates, and the inherently statistical nature of the folding process.
 
 \subsection{Information Loss Under Projection}
 
-For a biological system with $n$ degrees of freedom, each with $k$ distinguishable states, the total information content is:
+For a biological system with $n$ degrees of freedom, each with $k$ distinguishable states, the \emph{state specification information} (microstate description length) is:
 \begin{equation}
-I_{\text{total}} = \log_2(k^n) = n \log_2 k \quad \text{bits}
+I_{\text{spec}} = \log_2(k^n) = n \log_2 k \quad \text{bits}
 \end{equation}
 
 A binary test extracts exactly 1 bit---a yes/no partition of the state space. The fraction of information preserved is therefore:
 \begin{equation}
-\frac{I_{\text{preserved}}}{I_{\text{total}}} = \frac{1}{n \log_2 k}
+\frac{I_{\text{preserved}}}{I_{\text{spec}}} = \frac{1}{n \log_2 k}
 \end{equation}
 
-In a modest neural circuit with $n = 100$ neurons, each with $k = 10$ distinguishable states, this ratio becomes $1/(100 \times 3.32) \approx 0.003$---less than 1\% of the information preserved. A single binary test discards over 99\% of the system's information content.
+In a modest neural circuit with $n = 100$ neurons, each with $k = 10$ distinguishable states (an illustrative value; actual neural state spaces may be larger), this ratio becomes $1/(100 \times 3.32) \approx 0.003$---less than 1\% of the state specification information preserved. A single binary test discards over 99\% of the system's microstate description length.
 
-\textbf{Optimized projections fare little better.} One might object that scientific questions are not random partitions but \emph{directed} projections---like principal component analysis (PCA)---designed to capture maximum variance. This is true, but it does not rescue the situation. Even optimized projections must discard the ``long tail'' of high-dimensional correlations, and in biological systems this tail often contains the critical causal structure: rare conformational states, weak but decisive couplings, transient coherences that gate function. The principal components capture what varies most, not what matters most. Optimizing the projection does not eliminate projection loss; it merely concentrates the preserved information in directions chosen by the optimizer's assumptions---another layer of framework dependence.
+\textbf{Optimized projections fare little better.} One might object that scientific questions are not random partitions but \emph{directed} projections---like principal component analysis (PCA)---designed to capture maximum variance, and that the ``relevant'' information may live on a low-dimensional manifold. This is true, but it does not rescue the situation. Even optimized projections must discard the ``long tail'' of high-dimensional correlations, and in biological systems this tail often contains the critical causal structure: rare conformational states, weak but decisive couplings, transient coherences that gate function. The principal components capture what varies most, not what matters most. Optimizing the projection does not eliminate projection loss; it merely concentrates the preserved information in directions chosen by the optimizer's assumptions---another layer of framework dependence.
+
+\medskip
+\noindent\textbf{Lemma 1 (Identification is framework-dependent).} \emph{Even if the relevant structure is low-dimensional, identifying that structure is itself a high-dimensional inference problem. There is no framework-free way to determine which low-dimensional projection is ``correct.''}
+
+\smallskip
+\noindent\textbf{Proof.} See Appendix A. \hfill $\square$
+\medskip
 
 This is not a practical limitation awaiting better technology. It is an information-theoretic fact about projection. Moreover, the situation compounds: to fully specify the system state would require $n \log_2 k \approx 332$ independent binary tests, each of which may perturb the system. The measurement problem is not just that individual tests are lossy, but that the number of tests required scales with system complexity while biological systems cannot tolerate arbitrary repeated measurement.
 
@@ -161,7 +184,7 @@ Beyond framework dependence, three orthogonal physical constraints limit falsifi
 
 Biological systems are fundamentally high-dimensional. A single cell's state requires thousands of variables to specify---gene expression levels, metabolite concentrations, protein conformations, membrane potentials. Any finite-dimensional description is a projection.
 
-Mathematics itself is finite-dimensional: one can only write finitely many symbols. Every mathematical model is therefore a dimensional reduction. The question is not whether projection occurs but whether projection loss is small enough to preserve relevant structure. For biology, it often is not.
+Any concrete mathematical model has finite parameterization: one can only write finitely many symbols, equations, and variables. Every model is therefore a dimensional reduction. The question is not whether projection occurs but whether projection loss is small enough to preserve relevant structure. For biology, it often is not.
 
 \subsection{Quantum Timing and Measurement Disturbance}
 
@@ -185,7 +208,7 @@ These three axes---dimensionality, quantum disturbance, and energetic erasure---
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=\textwidth]{figures/fig_three_levels.pdf}
-\caption{\textbf{Three Levels of Limitation.} Left: Physical measurement limits---many biological signals exist below the Landauer threshold for irreversible bit recording. Center: Dimensional projection loss---a binary test on a 100-neuron circuit preserves less than 1\% of the information content. Right: Framework dependence---axiomatic choices about what counts as evidence precede all measurement and cannot be tested from within the framework.}
+\caption{\textbf{Three Levels of Limitation.} Left: Physical measurement limits---many biological signals exist below reliable single-event discrimination energy. Center: Dimensional projection loss---a binary test on a 100-neuron circuit preserves less than 1\% of the information content ($k = 10$ states per neuron is illustrative; actual neural state spaces may be larger). Right: Framework dependence---axiomatic choices about what counts as evidence precede all measurement and cannot be tested from within the framework.}
 \label{fig:three_levels}
 \end{figure}
 
@@ -193,15 +216,17 @@ These three axes---dimensionality, quantum disturbance, and energetic erasure---
 
 \subsection{Definition}
 
-We define the sub-Landauer domain as the space of biological patterns whose energy content falls below the threshold for irreversible bit recording:
+We define the sub-Landauer domain as the space of biological patterns whose energy content falls below reliable single-event readout energy:
 
 \textbf{Definition.} A biological structure $\mathcal{P}$ is \emph{sub-Landauer} if:
 \begin{enumerate}
-    \item Its energy scale $E_{\mathcal{P}} < k_B T \ln 2$
+    \item Its energy scale $E_{\mathcal{P}} \lesssim k_B T \ln 2$ (order-of-magnitude condition)
     \item It exhibits temporal coherence beyond thermal relaxation
     \item It causally influences observable biological functions
-    \item Measurement sufficient to resolve it as a bit destroys its biological role
+    \item Measurement sufficient to resolve it as a bit destroys the role \emph{by perturbing the dynamics beyond the relevant tolerance}---e.g., disrupting coherence, altering pathway selection, or shifting phase relations
 \end{enumerate}
+
+\textbf{Note on terminology.} The Landauer limit ($k_B T \ln 2 \approx 3 \times 10^{-21}$ J at physiological temperature) is a convenient reference scale; the substantive constraint is reliability against thermal fluctuations for single-event discrimination. Patterns at or below this scale cannot be reliably read as individual bits, though they remain causally potent and collectively detectable.
 
 \textbf{Operationalizing $E_{\mathcal{P}}$.} For patterns involving fields, correlations, or distributed codes, the ``energy scale'' requires operationalization. We define $E_{\mathcal{P}}$ as the \emph{energy difference per effective degree of freedom per correlation time} between the pattern-present and pattern-absent states. For an electric field perturbation, this is $\frac{1}{2}\epsilon E^2 \cdot V / D_{\text{eff}}$ where $V$ is the affected volume and $D_{\text{eff}}$ the number of coherently coupled modes. For a population correlation pattern, it is the change in free energy when the correlation is imposed versus destroyed. In each biological example below, we indicate how this quantity is estimated.
 
@@ -215,7 +240,7 @@ We define the sub-Landauer domain as the space of biological patterns whose ener
 \begin{equation}
 W = q \Delta V \approx (4 \times 1.6 \times 10^{-19}\,\text{C})(10^{-4}\,\text{V}) \approx 6.4 \times 10^{-23}\,\text{J}
 \end{equation}
-This is approximately \textbf{2\% of the Landauer limit}. A binary detector at the single-channel level would read only thermal noise. Yet these fields successfully entrain network activity because collective integration across $N$ channels lowers the effective threshold by $\sqrt{N}$---the signature of stochastic resonance operating in the sub-Landauer regime.
+This is approximately \textbf{2\% of the Landauer limit}. (This is a \emph{work-scale proxy}, not the full energetic budget of sensing; it bounds how much the field can bias gating per channel per event.) A binary detector at the single-channel level would read only thermal noise. Yet these fields successfully entrain network activity because collective integration across $N$ channels lowers the effective threshold by $\sqrt{N}$ (assuming approximately independent noise across units over the correlation time)---the signature of stochastic resonance operating in the sub-Landauer regime.
 
 \paragraph{Stochastic resonance.} Weak periodic signals below individual neuron thresholds can entrain population activity through noise-mediated synchronization \cite{mcdonnell2011,stocks2000}. The effective detection threshold drops as $E_{\text{threshold}}/\sqrt{N}$ for $N$ coupled units, rendering sub-threshold drives decisive at the population level despite being individually unmeasurable.
 
@@ -231,7 +256,7 @@ Let $s(t)$ be a weak periodic drive with per-unit energy $E_{\text{signal}}<E_{\
 \begin{equation}
 \mathrm{SNR}(Y)\approx \frac{N\,\mathrm{cov}(y_i,s)}{\sqrt{N\,\mathrm{var}(y_i)}}\propto \sqrt{N}
 \end{equation}
-so the effective detection threshold scales as $E_{\text{threshold}}/\sqrt{N}$. This is suprathreshold stochastic resonance \cite{stocks2000}, observed in sensory systems and neural arrays \cite{jaramillo1998,patel2011}.
+so the effective detection threshold scales as $E_{\text{threshold}}/\sqrt{N}$ (under the same independence/correlation-time assumptions as in \S5.2). This is suprathreshold stochastic resonance \cite{stocks2000}, observed in sensory systems and neural arrays \cite{jaramillo1998,patel2011}.
 
 The key insight is that sub-Landauer patterns are \textit{decisive} for biological function precisely because they operate at criticality---the boundary between noise and signal.
 
@@ -246,7 +271,7 @@ To formalize the limits on complete system specification, consider a biological 
 \begin{equation}
 T_{\text{pred}} \lesssim \frac{1}{\lambda} \ln\left(\frac{L}{\Delta x}\right)
 \end{equation}
-where $L$ is the system size and $\Delta x$ is the measurement precision. This is an \textit{in-principle} bound: no improvement in measurement technology can extend specification beyond this horizon without fundamentally altering the system dynamics.
+where $L$ is the characteristic dynamic range of the relevant coordinate(s) and $\Delta x$ is the \emph{effective} state-estimation precision under the chosen measurement map $M$, including measurement noise and any backaction induced by acquiring that precision (cf.\ \S2.2). This ties the predictability bound back to framework dependence: different choices of $M$ yield different $\Delta x$ and hence different horizons. This is an \textit{in-principle} bound: specification cannot be extended beyond this horizon without changing the system dynamics or the functional regime being specified.
 
 \subsection{Information-Theoretic Requirement}
 
@@ -269,7 +294,7 @@ Evolution operates in fitness landscapes of enormous dimensionality. A single pr
 
 \subsection{The Conjunction of Limits}
 
-The three levels of limitation---framework dependence, dimensional projection, and physical measurement bounds---interact multiplicatively. Even if measurement were perfect, dimensional projection would destroy information. Even if dimensionality were low, framework dependence would make falsification relative to unstated assumptions. Together, they circumscribe a domain where classical falsifiability becomes incoherent.
+The three levels of limitation---framework dependence, dimensional projection, and physical measurement bounds---interact synergistically. Even if measurement were perfect, dimensional projection would destroy information. Even if dimensionality were low, framework dependence would make falsification relative to unstated assumptions. Together, they circumscribe a domain where classical falsifiability becomes incoherent.
 
 This domain is not marginal. It includes:
 \begin{itemize}
@@ -309,12 +334,14 @@ This does not make consciousness mystical. It makes it a different kind of thing
 We propose that falsifiability in biology is scale-dependent:
 
 \begin{quote}
-\textbf{Principle.} A biological hypothesis $H$ about system $S$ is falsifiable at energy scale $E$ and framework $F$ if:
+\textbf{Principle (Scale-Dependent Falsifiability).} A biological hypothesis $H$ about system $S$ is falsifiable at energy scale $E$ and framework $\mathcal{F}$ if:
 \begin{equation*}
-E > \max(E_{\text{Landauer}}, E_{\text{coherence}}(S), E_{\text{coupling}}(S))
+E \gtrsim \max(E_{\text{Landauer}}, E_{\text{coherence}}(S), E_{\text{coupling}}(S))
 \end{equation*}
-and $H$ is expressible within the shared axiomatic structure of $F$.
+and $H$ is expressible within the shared axiomatic structure of $\mathcal{F}$.
 \end{quote}
+
+\noindent Here $E_{\text{coherence}}(S)$ is the order-of-magnitude energy required to resolve coherent patterns in $S$ without destroying them (e.g., the energy scale of phase-locking or quantum superposition), and $E_{\text{coupling}}(S)$ is the energy required to perturb the couplings that constitute $S$'s functional organization. The criterion uses $\gtrsim$ (order-of-magnitude inequality) rather than strict $>$, consistent with the sub-Landauer definition in \S5.1.
 
 This acknowledges that some biological questions admit falsification (enzyme kinetics, action potential propagation) while others do not (consciousness, ecosystem stability), and that even falsifiable hypotheses are only falsifiable relative to a shared framework.
 
@@ -362,6 +389,65 @@ This is Version 2.0 of a paper originally published in BioSystems (2025). The or
 \item \textbf{v1.0} (October 2025): Published in BioSystems. DOI: 10.1016/j.biosystems.2025.105608
 \item \textbf{v2.0} (December 2025): Expanded with framework-dependence argument, Wigner/selection-bias analysis, and mathematics-as-projection thesis. Available at: \url{https://coherencedynamics.com/papers/falsifiability}
 \end{itemize}
+
+\appendix
+
+\section{Proof of Lemma 1}
+\label{appendix:proof}
+
+\noindent\textbf{Lemma 1 (Identification is framework-dependent).} \emph{Even if the relevant structure is low-dimensional, identifying that structure is itself a high-dimensional inference problem. There is no framework-free way to determine which low-dimensional projection is ``correct.''}
+
+\begin{proof}
+We proceed by showing that any identification procedure necessarily constitutes a framework in the sense of Definition 1 (\S2.2), and that the choice of framework cannot be justified without appeal to a further framework.
+
+\textbf{Step 1: Identification requires algorithmic choices.}
+Let $X$ be a high-dimensional state space and suppose the ``relevant'' structure lies on a low-dimensional submanifold $\mathcal{M} \subset X$. Identifying $\mathcal{M}$ from observations requires an \emph{algorithm}---a finite sequence of operations mapping data to a specification of $\mathcal{M}$.
+
+Any such algorithm must make the following choices:
+\begin{enumerate}
+\item \textbf{Feature selection:} Which observables $Y = M(X)$ to measure? This choice determines what aspects of $X$ are visible.
+\item \textbf{Representation:} How to encode observations into a tractable form $Z = R(Y)$? This includes choices of basis, normalization, and preprocessing.
+\item \textbf{Criterion:} What constitutes a ``good'' identification? This requires a loss function, likelihood, or selection criterion.
+\item \textbf{Regularization/prior:} How to handle underdetermination when data does not uniquely specify $\mathcal{M}$?
+\end{enumerate}
+
+\textbf{Step 2: These choices constitute a framework.}
+The triple $(M, R, D)$---where $D$ is the decision rule induced by the criterion---defines a framework $\mathcal{F}$ in the sense of \S2.2. The framework maps the state space $X$ through measurement $M$, representation $R$, and decision $D$ to produce an identification output.
+
+Each framework $\mathcal{F}$ induces a partition $\{P_i\}$ on $X$: states in the same partition element are indistinguishable under $\mathcal{F}$. Different frameworks induce different partitions.
+
+\textbf{Step 3: Framework choice cannot be justified framework-free.}
+Suppose we attempt to adjudicate between frameworks $\mathcal{F}_1$ and $\mathcal{F}_2$ to determine which ``correctly'' identifies the relevant structure. This adjudication requires:
+\begin{itemize}
+\item A criterion for what counts as ``correct'' identification
+\item A method for comparing framework outputs
+\item Data to inform the comparison
+\end{itemize}
+
+But these requirements themselves constitute a meta-framework $\mathcal{F}^*$. The choice of $\mathcal{F}^*$ faces the same problem: it cannot be justified without appeal to some further framework $\mathcal{F}^{**}$. The regress does not terminate.
+
+\textbf{Step 4: Conclusion.}
+Since (i) every identification procedure constitutes a framework, (ii) different frameworks identify different structures (induce different partitions), and (iii) framework choice cannot be justified without infinite regress, identification is framework-dependent.
+
+This holds even when the ``true'' low-dimensional structure exists objectively. The structure's existence does not guarantee framework-free access to it. The map from high-dimensional observations to low-dimensional identification is necessarily mediated by choices that cannot be eliminated or uniquely determined by the data.
+\end{proof}
+
+\section{Information-Theoretic Formalization}
+\label{appendix:info}
+
+The framework dependence of identification can be stated information-theoretically using the Data Processing Inequality (DPI).
+
+\textbf{Setup.} Let $X$ be the true system state (high-dimensional), $Y = M(X)$ the measurement, $Z = R(Y)$ the representation, and $\hat{\mathcal{M}} = D(Z)$ the identified structure.
+
+\textbf{Proposition (Projection loss is unavoidable).} For any framework $\mathcal{F} = (M, R, D)$:
+\begin{equation}
+I(X; \hat{\mathcal{M}}) \leq I(X; Z) \leq I(X; Y) \leq H(X)
+\end{equation}
+where $I(\cdot;\cdot)$ denotes mutual information and $H(\cdot)$ denotes entropy. The inequalities are strict whenever the maps are non-invertible.
+
+\textbf{Proof.} By DPI, post-processing cannot increase information: $X \to Y \to Z \to \hat{\mathcal{M}}$ forms a Markov chain, so $I(X; \hat{\mathcal{M}}) \leq I(X; Z) \leq I(X; Y)$. The bound $I(X; Y) \leq H(X)$ follows from the definition of mutual information. $\square$
+
+\textbf{Corollary.} Different frameworks $\mathcal{F}_1, \mathcal{F}_2$ preserve different information about $X$. Specifically, $I(X; \hat{\mathcal{M}}_1)$ and $I(X; \hat{\mathcal{M}}_2)$ depend on the framework-specific maps, and in general neither dominates the other. The ``correct'' framework cannot be determined by maximizing preserved information without first specifying \emph{which} information matters---another framework choice.
 
 \begin{thebibliography}{99}
 

@@ -182,6 +182,10 @@ def create_three_levels_figure():
                  fontsize=9, color='#E63946', fontweight='bold',
                  bbox=dict(boxstyle='round,pad=0.3', facecolor='white', edgecolor='#E63946'))
 
+    # Add "illustrative k=10" annotation inside figure (GPT suggestion)
+    ax2.text(0.02, 0.97, 'illustrative k=10', transform=ax2.transAxes,
+             fontsize=8, color='#666666', style='italic', va='top', ha='left')
+
     ax2.set_ylim(0, 4)
     ax2.axhline(y=1, color='#E63946', linestyle='--', alpha=0.5, label='1% threshold')
 
