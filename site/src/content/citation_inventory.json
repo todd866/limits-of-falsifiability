@@ -1,0 +1,453 @@
+{
+  "summary": {
+    "paper_title": "The Limits of Falsifiability",
+    "paper_doi": "10.1016/j.biosystems.2025.105608",
+    "cited_keys": 16,
+    "bib_entries": 16,
+    "cited_dois": 14,
+    "cited_without_doi": 2,
+    "uncited_bib_entries": [],
+    "missing_bib_entries": [],
+    "paperlibrary_status_counts": {
+      "no_doi": 2,
+      "have_text": 14
+    },
+    "text_overrides_used": []
+  },
+  "references": [
+    {
+      "cite_key": "popper1959",
+      "title": "The Logic of Scientific Discovery",
+      "authors": "Popper, K.",
+      "year": "1959",
+      "journal": "",
+      "doi": "",
+      "url": "",
+      "citation_count": 1,
+      "contexts": [
+        {
+          "line": 36,
+          "context": "Karl Popper's falsifiability criterion has served as a cornerstone of scientific epistemology since its articulation in The Logic of Scientific Discovery popper1959. The criterion is binary: a hypothesis is scientific if and only if it can, in principle, be shown false through empirical observation. It has proven remarkably effective in distinguishing science from pseudoscience across biology, from molecular genetics to ecosystem ecology."
+        }
+      ],
+      "paperlibrary_status": "no_doi",
+      "paperlibrary": {},
+      "raw": "Popper, K. (1959). The Logic of Scientific Discovery. London: Hutchinson."
+    },
+    {
+      "cite_key": "landauer1961",
+      "title": "Irreversibility and heat generation in the computing process",
+      "authors": "Landauer, R.",
+      "year": "1961",
+      "journal": "IBM J. Res. Dev.",
+      "doi": "10.1147/rd.53.0183",
+      "url": "",
+      "citation_count": 1,
+      "contexts": [
+        {
+          "line": 45,
+          "context": "Physical measurement limits. The Landauer principle sets a lower bound on irreversible bit erasure ($ k_B T 2$); in biological settings it serves as a reference scale for reliable single-event discrimination under thermal noise landauer1961. Many biological patterns exist below this threshold---causally potent yet not reliably readable as individual bits."
+        }
+      ],
+      "paperlibrary_status": "have_text",
+      "paperlibrary": {
+        "slug": "10-1147-rd-53-0183",
+        "title": "Irreversibility and Heat Generation in the Computing Process",
+        "year": "1961",
+        "journal": "IBM Journal of Research and Development",
+        "source": "scihub",
+        "pdf_path": "/Users/iantodd/Projects/PaperLibrary/pdfs/10-1147-rd-53-0183.pdf",
+        "text_path": "/Users/iantodd/Projects/PaperLibrary/text/10-1147-rd-53-0183.txt",
+        "has_text": true
+      },
+      "raw": "Landauer, R. (1961). Irreversibility and heat generation in the computing process. IBM J. Res. Dev., 5(3), 183--191."
+    },
+    {
+      "cite_key": "wigner1960",
+      "title": "The unreasonable effectiveness of mathematics in the natural sciences",
+      "authors": "Wigner, E.P.",
+      "year": "1960",
+      "journal": "Comm. Pure Appl. Math.",
+      "doi": "10.1002/cpa.3160130102",
+      "url": "",
+      "citation_count": 1,
+      "contexts": [
+        {
+          "line": 66,
+          "context": "Eugene Wigner famously noted the ``unreasonable effectiveness of mathematics in the natural sciences'' wigner1960---the surprising correspondence between abstract mathematical structures and physical reality. We propose a partial explanation: physics has historically selected for systems where mathematical description works well."
+        }
+      ],
+      "paperlibrary_status": "have_text",
+      "paperlibrary": {
+        "slug": "10-1002-cpa-3160130102",
+        "title": "The unreasonable effectiveness of mathematics in the natural sciences. Richard courant lecture in mathematical sciences delivered at New York University, May 11, 1959",
+        "year": "1960",
+        "journal": "Communications on Pure and Applied Mathematics",
+        "source": "libgen",
+        "pdf_path": "/Users/iantodd/Projects/PaperLibrary/pdfs/10-1002-cpa-3160130102.pdf",
+        "text_path": "/Users/iantodd/Projects/PaperLibrary/text/10-1002-cpa-3160130102.txt",
+        "has_text": true
+      },
+      "raw": "Wigner, E.P. (1960). The unreasonable effectiveness of mathematics in the natural sciences. Comm. Pure Appl. Math., 13(1), 1--14."
+    },
+    {
+      "cite_key": "duhem1906",
+      "title": "La Th\\'eorie Physique: Son Objet et sa Structure",
+      "authors": "Duhem, P.",
+      "year": "1906",
+      "journal": "The Aim and Structure of Physical Theory",
+      "doi": "",
+      "url": "",
+      "citation_count": 1,
+      "contexts": [
+        {
+          "line": 87,
+          "context": "Duhem duhem1906 and Quine quine1951 established that no hypothesis is tested in isolation. Any empirical test involves auxiliary assumptions about measurement instruments, background conditions, and what counts as evidence. When a prediction fails, logic alone cannot determine whether the hypothesis or an auxiliary assumption is at fault."
+        }
+      ],
+      "paperlibrary_status": "no_doi",
+      "paperlibrary": {},
+      "raw": "Duhem, P. (1906). La Th\\'eorie Physique: Son Objet et sa Structure. English translation: The Aim and Structure of Physical Theory, Princeton University Press, 1954."
+    },
+    {
+      "cite_key": "quine1951",
+      "title": "Two dogmas of empiricism",
+      "authors": "Quine, W.V.O.",
+      "year": "1951",
+      "journal": "Philosophical Review",
+      "doi": "10.2307/2181906",
+      "url": "",
+      "citation_count": 1,
+      "contexts": [
+        {
+          "line": 87,
+          "context": "Duhem duhem1906 and Quine quine1951 established that no hypothesis is tested in isolation. Any empirical test involves auxiliary assumptions about measurement instruments, background conditions, and what counts as evidence. When a prediction fails, logic alone cannot determine whether the hypothesis or an auxiliary assumption is at fault."
+        }
+      ],
+      "paperlibrary_status": "have_text",
+      "paperlibrary": {
+        "slug": "10-2307-2181906",
+        "title": "Main Trends in Recent Philosophy: Two Dogmas of Empiricism",
+        "year": "1951",
+        "journal": "The Philosophical Review",
+        "source": "aa_fast_download",
+        "pdf_path": "/Users/iantodd/Projects/PaperLibrary/pdfs/10-2307-2181906.pdf",
+        "text_path": "/Users/iantodd/Projects/PaperLibrary/text/10-2307-2181906.txt",
+        "has_text": true
+      },
+      "raw": "Quine, W.V.O. (1951). Two dogmas of empiricism. Philosophical Review, 60(1), 20--43."
+    },
+    {
+      "cite_key": "mcdonnell2011",
+      "title": "The benefits of noise in neural systems: bridging theory and experiment",
+      "authors": "McDonnell, M.D., Ward, L.M.",
+      "year": "2011",
+      "journal": "Nat. Rev. Neurosci.",
+      "doi": "10.1038/nrn3061",
+      "url": "",
+      "citation_count": 1,
+      "contexts": [
+        {
+          "line": 244,
+          "context": "Biological systems exploit stochastic resonance to amplify sub-Landauer signals: weak periodic signals below individual neuron thresholds entrain population activity through noise-mediated synchronization mcdonnell2011,gammaitoni1998. The mechanism requires:"
+        }
+      ],
+      "paperlibrary_status": "have_text",
+      "paperlibrary": {
+        "slug": "10-1038-nrn3061",
+        "title": "The benefits of noise in neural systems: bridging theory and experiment",
+        "year": "2011",
+        "journal": "Nature Reviews Neuroscience",
+        "source": "libgen",
+        "pdf_path": "/Users/iantodd/Projects/PaperLibrary/pdfs/10-1038-nrn3061.pdf",
+        "text_path": "/Users/iantodd/Projects/PaperLibrary/text/10-1038-nrn3061.txt",
+        "has_text": true
+      },
+      "raw": "McDonnell, M.D., Ward, L.M. (2011). The benefits of noise in neural systems: bridging theory and experiment. Nat. Rev. Neurosci., 12(7), 415--426."
+    },
+    {
+      "cite_key": "dill2012",
+      "title": "The protein-folding problem, 50 years on",
+      "authors": "Dill, K.A., MacCallum, J.L.",
+      "year": "2012",
+      "journal": "Science",
+      "doi": "10.1126/science.1219021",
+      "url": "",
+      "citation_count": 1,
+      "contexts": [
+        {
+          "line": 151,
+          "context": "Consider a hypothesis about protein folding: ``Protein X folds via pathway Y.'' Testing this proposition requires bringing the protein to a state where folding intermediates are discretely resolvable, measuring without disrupting the folding process, and projecting the multi-dimensional folding landscape onto a binary decision axis. Yet protein folding occurs on a rugged energy landscape with astronomical numbers of conformational states dill2012. The act of measurement necessarily perturbs this landscape, potentially switching the protein to alternative folding pathways. Moreover, the binary projection destroys information about parallel pathways, transient intermediates, and the inherently statistical nature of the folding process."
+        }
+      ],
+      "paperlibrary_status": "have_text",
+      "paperlibrary": {
+        "slug": "10-1126-science-1219021",
+        "title": "The Protein-Folding Problem, 50 Years On",
+        "year": "2012",
+        "journal": "Science",
+        "source": "aa_fast_download",
+        "pdf_path": "/Users/iantodd/Projects/PaperLibrary/pdfs/10-1126-science-1219021.pdf",
+        "text_path": "/Users/iantodd/Projects/PaperLibrary/text/10-1126-science-1219021.txt",
+        "has_text": true
+      },
+      "raw": "Dill, K.A., MacCallum, J.L. (2012). The protein-folding problem, 50 years on. Science, 338(6110), 1042--1046."
+    },
+    {
+      "cite_key": "engel2007",
+      "title": "Evidence for wavelike energy transfer through quantum coherence in photosynthetic systems",
+      "authors": "Engel, G.S., et al.",
+      "year": "2007",
+      "journal": "Nature",
+      "doi": "10.1038/nature05678",
+      "url": "",
+      "citation_count": 2,
+      "contexts": [
+        {
+          "line": 188,
+          "context": "Even for low-dimensional systems, quantum measurement backaction imposes limits. When biological processes depend on coherent superposition or entanglement (as in photosynthetic energy transfer engel2007), measurement to resolve the system state necessarily collapses the superposition, destroying the very coherence that enables function."
+        },
+        {
+          "line": 232,
+          "context": "Photosynthetic energy transfer. Quantum coherence in photosynthetic complexes exists at energies near $10^-21$ J---near the Landauer limit. The coherence enables near-perfect energy transfer efficiency by allowing excitons to simultaneously sample multiple pathways. Measurement to determine the specific path destroys the coherence and reduces transfer efficiency engel2007,cao2020."
+        }
+      ],
+      "paperlibrary_status": "have_text",
+      "paperlibrary": {
+        "slug": "10-1038-nature05678",
+        "title": "Evidence for wavelike energy transfer through quantum coherence in photosynthetic systems",
+        "year": "2007",
+        "journal": "Nature",
+        "source": "aa_fast_download",
+        "pdf_path": "/Users/iantodd/Projects/PaperLibrary/pdfs/10-1038-nature05678.pdf",
+        "text_path": "/Users/iantodd/Projects/PaperLibrary/text/10-1038-nature05678.txt",
+        "has_text": true
+      },
+      "raw": "Engel, G.S., et al. (2007). Evidence for wavelike energy transfer through quantum coherence in photosynthetic systems. Nature, 446(7137), 782--786."
+    },
+    {
+      "cite_key": "anastassiou2011",
+      "title": "Ephaptic coupling of cortical neurons",
+      "authors": "Anastassiou, C.A., et al.",
+      "year": "2011",
+      "journal": "Nat. Neurosci.",
+      "doi": "10.1038/nn.2727",
+      "url": "",
+      "citation_count": 1,
+      "contexts": [
+        {
+          "line": 234,
+          "context": "Ephaptic coupling. Endogenous electric fields as weak as 1 mV/mm---well below single neuron detection thresholds---can shift spike timing by several milliseconds across neural populations anastassiou2011,chiang2019. These fields represent information-carrying patterns that operate below the Landauer limit yet causally influence network dynamics."
+        }
+      ],
+      "paperlibrary_status": "have_text",
+      "paperlibrary": {
+        "slug": "10-1038-nn-2727",
+        "title": "Ephaptic coupling of cortical neurons",
+        "year": "2011",
+        "journal": "Nature Neuroscience",
+        "source": "harvest:laptop-audit",
+        "pdf_path": "/Users/iantodd/Projects/PaperLibrary/pdfs/10-1038-nn-2727.pdf",
+        "text_path": "/Users/iantodd/Projects/PaperLibrary/text/10-1038-nn-2727.txt",
+        "has_text": true
+      },
+      "raw": "Anastassiou, C.A., et al. (2011). Ephaptic coupling of cortical neurons. Nat. Neurosci., 14(2), 217--223."
+    },
+    {
+      "cite_key": "cao2020",
+      "title": "Quantum biology revisited",
+      "authors": "Cao, J., et al.",
+      "year": "2020",
+      "journal": "Sci. Adv.",
+      "doi": "10.1126/sciadv.aaz4888",
+      "url": "",
+      "citation_count": 1,
+      "contexts": [
+        {
+          "line": 232,
+          "context": "Photosynthetic energy transfer. Quantum coherence in photosynthetic complexes exists at energies near $10^-21$ J---near the Landauer limit. The coherence enables near-perfect energy transfer efficiency by allowing excitons to simultaneously sample multiple pathways. Measurement to determine the specific path destroys the coherence and reduces transfer efficiency engel2007,cao2020."
+        }
+      ],
+      "paperlibrary_status": "have_text",
+      "paperlibrary": {
+        "slug": "10-1126-sciadv-aaz4888",
+        "title": "Quantum biology revisited",
+        "year": "2020",
+        "journal": "Science Advances",
+        "source": "unpaywall",
+        "pdf_path": "/Users/iantodd/Projects/PaperLibrary/pdfs/10-1126-sciadv-aaz4888.pdf",
+        "text_path": "/Users/iantodd/Projects/PaperLibrary/text/10-1126-sciadv-aaz4888.txt",
+        "has_text": true
+      },
+      "raw": "Cao, J., et al. (2020). Quantum biology revisited. Sci. Adv., 6(14), eaaz4888."
+    },
+    {
+      "cite_key": "chiang2019",
+      "title": "Slow periodic activity in the longitudinal hippocampal slice can self-propagate non-synaptically",
+      "authors": "Chiang, C.C., et al.",
+      "year": "2019",
+      "journal": "J. Physiol.",
+      "doi": "10.1113/jp276904",
+      "url": "",
+      "citation_count": 1,
+      "contexts": [
+        {
+          "line": 234,
+          "context": "Ephaptic coupling. Endogenous electric fields as weak as 1 mV/mm---well below single neuron detection thresholds---can shift spike timing by several milliseconds across neural populations anastassiou2011,chiang2019. These fields represent information-carrying patterns that operate below the Landauer limit yet causally influence network dynamics."
+        }
+      ],
+      "paperlibrary_status": "have_text",
+      "paperlibrary": {
+        "slug": "10-1113-jp276904",
+        "title": "Slow periodic activity in the longitudinal hippocampal slice can self‐propagate non‐synaptically by a mechanism consistent with ephaptic coupling",
+        "year": "2018",
+        "journal": "The Journal of Physiology",
+        "source": "libgen",
+        "pdf_path": "/Users/iantodd/Projects/PaperLibrary/pdfs/10-1113-jp276904.pdf",
+        "text_path": "/Users/iantodd/Projects/PaperLibrary/text/10-1113-jp276904.txt",
+        "has_text": true
+      },
+      "raw": "Chiang, C.C., et al. (2019). Slow periodic activity in the longitudinal hippocampal slice can self-propagate non-synaptically. J. Physiol., 597(1), 249--269."
+    },
+    {
+      "cite_key": "stocks2000",
+      "title": "Suprathreshold stochastic resonance in multilevel threshold systems",
+      "authors": "Stocks, N.",
+      "year": "2000",
+      "journal": "Phys. Rev. Lett.",
+      "doi": "10.1103/physrevlett.84.2310",
+      "url": "",
+      "citation_count": 1,
+      "contexts": [
+        {
+          "line": 254,
+          "context": "so the effective detection threshold scales as $E_threshold/N$ (under the same independence/correlation-time assumptions as in 5.2). This is suprathreshold stochastic resonance stocks2000, observed in sensory systems and neural arrays jaramillo1998,patel2011."
+        }
+      ],
+      "paperlibrary_status": "have_text",
+      "paperlibrary": {
+        "slug": "10-1103-physrevlett-84-2310",
+        "title": "Suprathreshold Stochastic Resonance in Multilevel Threshold Systems",
+        "year": "2000",
+        "journal": "Physical Review Letters",
+        "source": "libgen",
+        "pdf_path": "/Users/iantodd/Projects/PaperLibrary/pdfs/10-1103-physrevlett-84-2310.pdf",
+        "text_path": "/Users/iantodd/Projects/PaperLibrary/text/10-1103-physrevlett-84-2310.txt",
+        "has_text": true
+      },
+      "raw": "Stocks, N. (2000). Suprathreshold stochastic resonance in multilevel threshold systems. Phys. Rev. Lett., 84(11), 2310--2313."
+    },
+    {
+      "cite_key": "gammaitoni1998",
+      "title": "Stochastic resonance",
+      "authors": "Gammaitoni, L., et al.",
+      "year": "1998",
+      "journal": "Rev. Mod. Phys.",
+      "doi": "10.1103/revmodphys.70.223",
+      "url": "",
+      "citation_count": 1,
+      "contexts": [
+        {
+          "line": 244,
+          "context": "Biological systems exploit stochastic resonance to amplify sub-Landauer signals: weak periodic signals below individual neuron thresholds entrain population activity through noise-mediated synchronization mcdonnell2011,gammaitoni1998. The mechanism requires:"
+        }
+      ],
+      "paperlibrary_status": "have_text",
+      "paperlibrary": {
+        "slug": "10-1103-revmodphys-70-223",
+        "title": "Stochastic resonance",
+        "year": "1998",
+        "journal": "Reviews of Modern Physics",
+        "source": "libgen",
+        "pdf_path": "/Users/iantodd/Projects/PaperLibrary/pdfs/10-1103-revmodphys-70-223.pdf",
+        "text_path": "/Users/iantodd/Projects/PaperLibrary/text/10-1103-revmodphys-70-223.txt",
+        "has_text": true
+      },
+      "raw": "Gammaitoni, L., et al. (1998). Stochastic resonance. Rev. Mod. Phys., 70(1), 223--287."
+    },
+    {
+      "cite_key": "jaramillo1998",
+      "title": "Mechanoelectrical transduction assisted by Brownian motion",
+      "authors": "Jaramillo, F., Wiesenfeld, K.",
+      "year": "1998",
+      "journal": "Nat. Neurosci.",
+      "doi": "10.1038/1597",
+      "url": "",
+      "citation_count": 1,
+      "contexts": [
+        {
+          "line": 254,
+          "context": "so the effective detection threshold scales as $E_threshold/N$ (under the same independence/correlation-time assumptions as in 5.2). This is suprathreshold stochastic resonance stocks2000, observed in sensory systems and neural arrays jaramillo1998,patel2011."
+        }
+      ],
+      "paperlibrary_status": "have_text",
+      "paperlibrary": {
+        "slug": "10-1038-1597",
+        "title": "Mechanoelectrical transduction assisted by Brownian motion: a role for noise in the auditory system",
+        "year": "1998",
+        "journal": "Nature Neuroscience",
+        "source": "scihub",
+        "pdf_path": "/Users/iantodd/Projects/PaperLibrary/pdfs/10-1038-1597.pdf",
+        "text_path": "/Users/iantodd/Projects/PaperLibrary/text/10-1038-1597.txt",
+        "has_text": true
+      },
+      "raw": "Jaramillo, F., Wiesenfeld, K. (1998). Mechanoelectrical transduction assisted by Brownian motion. Nat. Neurosci., 1(5), 384--388."
+    },
+    {
+      "cite_key": "patel2011",
+      "title": "Noise benefits in quantizer-array correlation detection",
+      "authors": "Patel, A., Kosko, B.",
+      "year": "2011",
+      "journal": "IEEE Trans. Signal Process.",
+      "doi": "10.1109/tsp.2010.2091409",
+      "url": "",
+      "citation_count": 1,
+      "contexts": [
+        {
+          "line": 254,
+          "context": "so the effective detection threshold scales as $E_threshold/N$ (under the same independence/correlation-time assumptions as in 5.2). This is suprathreshold stochastic resonance stocks2000, observed in sensory systems and neural arrays jaramillo1998,patel2011."
+        }
+      ],
+      "paperlibrary_status": "have_text",
+      "paperlibrary": {
+        "slug": "10-1109-tsp-2010-2091409",
+        "title": "Noise Benefits in Quantizer-Array Correlation Detection and Watermark Decoding",
+        "year": "2011",
+        "journal": "IEEE Transactions on Signal Processing",
+        "source": "libgen",
+        "pdf_path": "/Users/iantodd/Projects/PaperLibrary/pdfs/10-1109-tsp-2010-2091409.pdf",
+        "text_path": "/Users/iantodd/Projects/PaperLibrary/text/10-1109-tsp-2010-2091409.txt",
+        "has_text": true
+      },
+      "raw": "Patel, A., Kosko, B. (2011). Noise benefits in quantizer-array correlation detection. IEEE Trans. Signal Process., 59(2), 488--501."
+    },
+    {
+      "cite_key": "todd2025timing",
+      "title": "Timing inaccessibility and the projection bound: Resolving Maxwell's demon for continuous biological substrates",
+      "authors": "Todd, I.",
+      "year": "2025",
+      "journal": "BioSystems",
+      "doi": "10.1016/j.biosystems.2025.105632",
+      "url": "https://doi.org/10.1016/j.biosystems.2025.105632",
+      "citation_count": 1,
+      "contexts": [
+        {
+          "line": 199,
+          "context": "Strictly, Landauer's principle concerns the thermodynamic cost of erasing information, not detecting it. However, any measurement that produces a reusable, communicable result must eventually involve erasure---resetting the measurement apparatus for subsequent use. The deeper issue is timing inaccessibility: even if detection were thermodynamically free, specifying when to measure in a chaotic system requires information that cannot be obtained without perturbing the dynamics todd2025timing."
+        }
+      ],
+      "paperlibrary_status": "have_text",
+      "paperlibrary": {
+        "slug": "10-1016-j-biosystems-2025-105632",
+        "title": "Timing inaccessibility and the projection bound: Resolving Maxwell’s demon for continuous biological substrates",
+        "year": "2025",
+        "journal": "BioSystems",
+        "source": "harvest:laptop-audit",
+        "pdf_path": "/Users/iantodd/Projects/PaperLibrary/pdfs/10-1016-j-biosystems-2025-105632.pdf",
+        "text_path": "/Users/iantodd/Projects/PaperLibrary/text/10-1016-j-biosystems-2025-105632.txt",
+        "has_text": true
+      },
+      "raw": "Todd, I. (2025). Timing inaccessibility and the projection bound: Resolving Maxwell's demon for continuous biological substrates. BioSystems, 258, 105632. https://doi.org/10.1016/j.biosystems.2025.105632"
+    }
+  ]
+}
