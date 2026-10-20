@@ -1,5 +1,7 @@
 # The Limits of Falsifiability
 
+**2026 edition:** a rewrite of this paper as I would write it today, with AI-assisted checking. See [`2026-edition/`](2026-edition/) ([PDF](2026-edition/falsifiability_2026.pdf)). The published article remains the version of record.
+
 **Published in BioSystems 258, 105608 (2025)**
 
 [![DOI](https://img.shields.io/badge/DOI-10.1016/j.biosystems.2025.105608-blue)](https://doi.org/10.1016/j.biosystems.2025.105608)

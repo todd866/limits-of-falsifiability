@@ -1,0 +1,272 @@
+\documentclass[10pt,twocolumn]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[a4paper,margin=19mm,columnsep=7mm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{microtype}
+\usepackage[round,authoryear]{natbib}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{pdftitle={The limits of falsifiability: 2026 edition},pdfauthor={Ian Todd}}
+\setlength{\parindent}{1em}
+\setlength{\parskip}{0pt}
+\setlength{\emergencystretch}{1em}
+\setlength{\bibsep}{3pt}
+\brokenpenalty=10000
+\raggedbottom
+\newcommand{\bits}{\,\mathrm{bits}}
+\title{The limits of falsifiability:\\
+Dimensionality and physical access in biological systems}
+\author{Ian Todd\\[2pt]
+\small Sydney Medical School, University of Sydney, Sydney, NSW, Australia\\
+\small \texttt{itod2305@uni.sydney.edu.au}}
+\date{\small 2026 edition}
+
+\begin{document}
+\twocolumn[
+\maketitle
+\begin{abstract}
+\noindent
+In high-dimensional living systems, the distinctions that matter often cannot survive a low-dimensional measurement. Binary falsification therefore breaks down as a general criterion for biological knowledge. Neural timing, protein-folding pathways and ecological interactions expose the central problem: different organisations can yield the same observable predictions. The decisive quantity is the information retained about a target hypothesis. A sufficient statistic preserves that information; a projection that erases the relevant distinction makes competing accounts indistinguishable. Physical observation adds a second constraint because the interaction needed to resolve a relation can change the process that sustains it. Population sensitivity to weak signals and finite prediction horizons show how access changes across scales and over time. Biological knowledge must therefore reach beyond accepted and rejected propositions to the organisation that makes their observable consequences possible. Falsification has force within an adequate description; it cannot certify that description's completeness.
+\end{abstract}
+\par
+\vspace{5pt}
+\noindent\small\textbf{Keywords:} falsifiability; biological organisation; dimensionality; measurement; Landauer principle; stochastic resonance
+\par\vspace{5pt}
+\noindent\footnotesize
+The published article in \textit{BioSystems} 258, 105608 (2025),
+\href{https://doi.org/10.1016/j.biosystems.2025.105608}{doi:10.1016/j.biosystems.2025.105608},
+remains the version of record and the article to cite. This is a separate author edition.
+\par\vspace{15pt}
+]
+
+\section{Biological organisation}
+
+Binary falsification fails as a general criterion for biological knowledge because low-dimensional observations often erase the distinctions on which living organisation depends. A test judges the consequences that reach its instruments. When different causal organisations collapse onto the same record, the test cannot decide between them. The central task is to establish which biological relations survive the passage from system to observation.
+
+The activity of a neuron depends on the population around it. Shared inputs, extracellular fields and the timing of neighbouring cells can change its response without appearing as a large change in its average firing rate. Experiments on ephaptic coupling, in which neurons influence one another through electric fields, provide concrete examples \citep{anastassiou2011,chiang2019}. A measurement restricted to firing rate could miss a relation that matters to the network. Measuring that relation requires a different view of the system, with its own temporal resolution and physical coupling.
+
+Similar problems arise in protein folding. An endpoint measurement can distinguish folded from unfolded protein while leaving the route between those states unresolved. The folding problem includes a large space of conformations, interactions with the environment and multiple possible routes \citep{dill2012}. Whether the endpoint is adequate evidence depends on the claim. It may settle a question about yield while leaving a question about mechanism open.
+
+Popper's criterion concerns whether a claim can conflict with possible observations \citep{popper1959}. Those observations include complex records and statistical distributions. The binary judgment of falsification can retain all that evidence. The bottleneck lies upstream: measurement and representation must preserve the distinctions that make the claim testable.
+
+Living systems maintain their organisation through ongoing activity. Isolating a component can remove the coupling that gives it a role; averaging can erase timing relations; repeated trials can sample systems whose internal states have changed. The preparation determines which organisation the experiment tests. The boundary of a test is therefore also a boundary of biological access.
+
+Biological epistemology must account for this gap between causal organisation and accessible evidence. The following argument begins with what a projection preserves, then examines the physical interaction that produces a record. Collective sensitivity, prediction and examples across biological scales lead to an explicit criterion for indistinguishability. Together they place falsification within a broader account of knowledge grounded in relations, mechanisms and evidence across scales.
+
+\section{What a projection preserves}
+\label{sec:projection}
+
+\subsection{Microstate detail and a scientific target}
+
+A biological state can contain far more detail than a test needs. Let \(X\) denote a discrete description of that state, with \(n\) independent coordinates, each uniformly distributed over \(k\) possible values. Its Shannon entropy, \(H(X)\), measures average uncertainty in bits:
+\begin{equation}
+H(X)=\log_2(k^n)=n\log_2 k.
+\label{eq:entropy}
+\end{equation}
+Let \(B=f(X)\) be a deterministic binary statistic. The mutual information \(I(X;B)\), which measures how much observing \(B\) tells us about \(X\), obeys
+\begin{equation}
+I(X;B)=H(B)\leq 1\bits.
+\label{eq:binary}
+\end{equation}
+For \(n=100\) and \(k=10\), the state entropy is approximately \(332.193\) bits. Thus a binary statistic retains at most
+\begin{equation}
+\frac{I(X;B)}{H(X)}
+\leq \frac{1}{100\log_2 10}
+\simeq 0.0030103,
+\label{eq:fraction}
+\end{equation}
+or \(0.30103\%\) of the microstate entropy. Equality requires a balanced binary output. With nonuniform or dependent coordinates, the actual entropy replaces Eq.~\eqref{eq:entropy}; the fraction is defined only when that entropy is positive.
+
+The scientific value of the retained information depends on the target. Let \(U\) be a fair binary target and let \(V\) contain independent nuisance variation of arbitrarily high dimension. If \(X=(U,V)\) and \(B=U\), then
+\begin{equation}
+I(U;B)=I(U;X)=1\bits.
+\end{equation}
+All information about the target survives. Almost all information about the full state can be discarded.
+
+The relevant measure is therefore how much a record tells us about the competing hypotheses. The microstate fraction in Eq.~\eqref{eq:fraction} measures descriptive compression, not a fraction of scientific understanding.
+
+\subsection{Loss relative to a hypothesis}
+
+Consider a fixed experimental protocol. Let \(\Theta\) label competing hypotheses, with positive prior probabilities used to define information quantities. Let \(Y\) be the measured record and \(Z=R(Y)\) a representation computed from that record. Assume the observation depends on the hypothesis through the biological state \(X\), so that
+\[
+\Theta\longrightarrow X\longrightarrow Y\longrightarrow Z
+\]
+is a Markov chain: each stage depends on earlier stages only through its immediate input. Information processing then gives
+\begin{equation}
+I(\Theta;Z)\leq I(\Theta;Y)\leq I(\Theta;X).
+\label{eq:dpi}
+\end{equation}
+The hypothesis-relevant loss at the representation stage is
+\begin{align}
+\mathcal L_\Theta
+&:=I(\Theta;Y)-I(\Theta;Z)\nonumber\\
+&=I(\Theta;Y\mid Z)\geq 0.
+\label{eq:loss}
+\end{align}
+Here the conditional mutual information on the second line measures the additional information about \(\Theta\) in \(Y\) once \(Z\) is known. The identity follows by expanding the information in the pair \((Y,Z)\), since \(Z\) is computed from \(Y\).
+
+Zero loss holds precisely when \(\Theta\) and \(Y\) are conditionally independent given \(Z\). In that case \(Z\) is sufficient for these hypotheses: the full record cannot further change their posterior probabilities. A noninvertible representation can satisfy this condition. Strict loss requires positive conditional mutual information for the specified target. Sufficiency is relative to the chosen hypothesis set.
+
+The same distinction matters before data processing. A sensor can be adequate for discriminating two mechanisms while failing to reconstruct either mechanism's full state. Conversely, a large recording can omit the one relation on which their predictions differ. Measurement count and explanatory access need not grow together.
+
+\subsection{Why high dimension still matters}
+
+High dimension expands the space of relations that a chosen observable can omit. A low-variance mode can control a transition; a rare conformation can determine binding; a population relation can disappear from every single-cell average. Variance captured and variables counted are poor substitutes for identifying the relations a hypothesis needs.
+
+Consider three idealised binary activity variables. One model assigns equal probability to the states \(000\), \(011\), \(101\) and \(110\); another assigns equal probability to \(001\), \(010\), \(100\) and \(111\). Every individual variable and every pair has the same distribution in both models. Yet the joint states are entirely distinct: counting whether the number of active units is even or odd distinguishes the models perfectly. Reducing the record to individual and pairwise distributions removes all evidence about this difference. For \(n\) binary variables, the same construction hides even versus odd parity from every marginal distribution involving fewer than \(n\) variables. A single parity bit computed from the joint record preserves the distinction. Access to the joint relation, rather than the size of the final statistic, decides the test.
+
+Neural recordings show both rich distributed variation and useful low-dimensional structure. \citet{stringer2019} found multidimensional activity associated with spontaneous behaviour. \citet{gallego2020} found stable latent population dynamics underlying consistent behaviour. The distinction between embedding dimension, the number of coordinates used to record activity, and intrinsic dimension, the dimensions needed to describe its structure, helps interpret these findings \citep{jazayeri2021}. The biological task determines which structure a description must retain.
+
+The deeper issue is the scope of a reduction. A representation that preserves predictions in one behavioural regime may fail when the system learns, changes environment or reorganises after perturbation. The omitted variables can become relevant because the biological relations themselves change. Testing a reduction across such changes addresses the paper's high-dimensional concern more directly than asking how much variance it captures in one dataset.
+
+Mathematical models, numerical approximations and observational access are distinct. A field equation can define infinitely many degrees of freedom using finite notation. A numerical implementation resolves a chosen approximation with finite resources. An experiment records what its physical coupling makes accessible. The adequacy of each turns on the relations it preserves and the questions it can answer.
+
+\section{Sensing and memory}
+\label{sec:physical}
+
+A weak signal, a reliable record and a reusable detector belong to different parts of an experiment. The signal changes some physical variable. The detector couples to that variable and forms a record. Reset prepares its memory for reuse. Each stage has physical costs, and those costs can occur in different places.
+
+\subsection{Memory reset and the Landauer scale}
+
+For an isothermal reset of an initially unbiased binary memory to a standard logical state, with the memory initially uncorrelated with the reservoir and no usable side information about the bit, the Landauer bound is
+\begin{equation}
+Q_{\mathrm{bath}}\geq k_{\mathrm B}T\ln 2.
+\label{eq:landauer}
+\end{equation}
+Here \(Q_{\mathrm{bath}}\) is heat delivered to a thermal reservoir, \(k_{\mathrm B}\) is Boltzmann's constant and \(T\) is the reservoir temperature \citep{landauer1961}. At \(T=310\,\mathrm K\), the scale is \(2.96668\times10^{-21}\,\mathrm J\).
+
+This is a cost of memory reset, not a detection threshold or a required heat input to the biological source. A powered detector can respond to a small input and dissipate energy elsewhere. Other memory distributions, residual reset error and accessible correlations change the entropy removed during reset.
+
+The phrase \emph{sub-Landauer} compares a specified energy with \(k_{\mathrm B}T\ln2\). For a distributed pattern, the comparison requires a defined system boundary and mode of coupling. Field energy, work on a molecular sensor and free energy associated with a correlation are different quantities.
+
+An illustrative gating calculation makes the distinction concrete. Suppose an effective gating charge \(q=4e\), where \(e\) is the elementary charge, experiences a voltage change \(\Delta V=10^{-4}\,\mathrm V\). The associated work scale is
+\begin{equation}
+W=q\Delta V=6.40871\times10^{-23}\,\mathrm J.
+\label{eq:gating}
+\end{equation}
+At \(310\,\mathrm K\), this is \(0.02160\), or \(2.160\%\), of the Landauer scale and about \(0.01497\,k_{\mathrm B}T\). The stipulated parameters describe a small energetic bias at one sensor. Converting an extracellular field into this voltage requires the cell's geometry and electrical properties; predicting a population response requires its coupling and noise statistics.
+
+\subsection{Discrimination and disturbance}
+
+A detection claim needs a signal and noise model, a bandwidth and an observation time. It also needs an error criterion. Weak inputs may become distinguishable after integration, while changes in the source can limit how long integration remains informative. A disturbance claim requires a model of the detector--target coupling and a biologically meaningful tolerance: altered spike timing, changed transition probabilities or loss of a maintained relation.
+
+The experimental task is to achieve the needed discrimination within that tolerance. Resolving a relation and preserving its biological role can pull in opposite directions: a stronger coupling improves the record while changing the dynamics recorded. This trade-off makes the detector part of the biological argument.
+
+Quantum measurement constrains access through specified quantum degrees of freedom, observables and interactions. Classical phase coordination across neurons concerns a different physical description. In either setting, a claim about disturbance must identify the coupling through which the observer gains information.
+
+\section{Collective sensitivity to weak signals}
+
+Biological systems can respond collectively to inputs that produce unreliable responses in individual components. Stochastic resonance supplies one mechanism: in suitable nonlinear systems, adding noise improves a specified measure of signal transmission or detection over some range of noise strengths \citep{gammaitoni1998,mcdonnell2011}. Threshold-array models also exhibit suprathreshold stochastic resonance under particular signal and noise conditions \citep{stocks2000}.
+
+Population averaging illustrates a related statistical advantage without requiring stochastic resonance. Consider \(N\) units with responses \(y_i=s+\eta_i\), where \(s\) is a shared signal and \(\eta_i\) is zero-mean noise in unit \(i\). Suppose each noise term has variance \(\sigma^2\). Write \(\bar y=N^{-1}\sum_{i=1}^{N}y_i\) for the population mean. If every distinct noise pair has correlation \(\rho\), then
+\begin{equation}
+\operatorname{Var}(\bar y)
+=\frac{\sigma^2}{N}\bigl[1+(N-1)\rho\bigr].
+\label{eq:pooling}
+\end{equation}
+The signal amplitude relative to the standard deviation of the population noise is
+\begin{equation}
+d_N=\frac{|s|\sqrt N}
+{\sigma\sqrt{1+(N-1)\rho}}.
+\label{eq:snr}
+\end{equation}
+With independent noise, \(\rho=0\), this amplitude ratio grows as \(\sqrt N\). Its square, a power signal-to-noise ratio, grows as \(N\). With fixed positive shared correlation, the gain saturates. Heterogeneous sensitivities and temporal correlations require their own covariance model.
+
+For energy per unit proportional to squared amplitude over a fixed duration, the \(N^{-1/2}\) amplitude threshold gives an \(N^{-1}\) energy threshold at fixed discrimination. The summed energy across \(N\) units need not decrease. Nonlinear detectors require a relation between input amplitude and energy specific to their dynamics. Pooling gains come from averaging; stochastic resonance requires noise-dependent improvement.
+
+Ephaptic experiments establish that electric fields can influence neural activity \citep{anastassiou2011,chiang2019}. Applying the pooling calculation to those populations requires their measured sensitivities and noise covariance. The experiments make distributed sensitivity and timing relations concrete biological targets.
+
+A pattern can have a reliable consequence at one scale while its contribution at another scale is difficult to isolate. An observer who discards the population relation loses evidence that the system itself uses. Measuring the population response can reveal that relation without reconstructing every component. Collective organisation is a causal object in its own right.
+
+In systems with an independently established critical regime, proximity to a transition offers another route to large responses and long correlations \citep{munoz2018}. Increased sensitivity amplifies weak perturbations, while correlated fluctuations limit gains from averaging.
+
+\section{Trajectories and prediction}
+
+A theory can predict a distribution while failing to predict the next individual trajectory. This distinction matters in a system where small initial differences grow. Suppose a specified model has an interval of approximately exponential growth in its state-estimation error \(\delta(t)\) at elapsed time \(t\). Let \(\delta_0\) be the initial error, \(\lambda>0\) the relevant growth rate and \(\epsilon>\delta_0\) the largest error acceptable for the forecast. Then
+\begin{equation}
+\delta(t)\simeq\delta_0 e^{\lambda t},
+\qquad
+t_{\mathrm{pred}}\simeq
+\frac{1}{\lambda}\ln\!\left(\frac{\epsilon}{\delta_0}\right).
+\label{eq:horizon}
+\end{equation}
+Here \(t_{\mathrm{pred}}\) is the time at which the approximation reaches the tolerance within that growth interval. Its logarithmic dependence on initial precision makes longer trajectory forecasts increasingly demanding.
+
+Improved initial measurements extend the horizon, and continued observations update the forecast. Process noise and measurement disturbance enter through their contributions to estimation error. The resulting horizon concerns forecast accuracy; simulation speed is a separate computational question.
+
+Complete state specification imposes a different burden. If \(n\) independently variable coordinates each span a range \(L\) and are resolved to bins of width \(\Delta x\), with \(L/\Delta x\) large, the worst-case description length scales as
+\begin{equation}
+I_{\mathrm{spec}}\simeq n\log_2(L/\Delta x)\bits.
+\label{eq:specification}
+\end{equation}
+Here \(I_{\mathrm{spec}}\) counts bits needed to identify a cell in the discretisation. A probability distribution is needed to turn this count into a Shannon entropy, a sampling model to infer experimental effort, and a physical process to assign a thermodynamic cost. Constraints between coordinates reduce the count. A hypothesis about a coarse observable can require much less information.
+
+Even when complete trajectories remain inaccessible, recurrence frequencies or response distributions can be sharply constrained. Such constraints remain empirical tests. Their interpretation depends on what repeated trials share. If adaptation or accumulated history changes the system between trials, pooling can conceal the change. Repetition must therefore be accompanied by a biological account of preparation and state, rather than an assumption that each trial begins again.
+
+\section{Consequences across biological scales}
+
+\subsection{Molecular dynamics and quantum coherence}
+
+Photosynthetic energy transfer shows how a measured signal can support different accounts of the underlying dynamics. Early spectroscopy reported oscillatory signals interpreted as evidence for wavelike transfer \citep{engel2007}. Later work separated electronic and vibrational contributions and challenged the need for long-lived electronic coherence in efficient transfer \citep{duan2017,thyrhaug2018,cao2020}. Resolving the source of the oscillations changed the mechanistic interpretation.
+
+Where alternative quantum paths interfere, a measurement that distinguishes them changes the interference. The effect on biological performance depends on the role of those paths in the mechanism. Spectroscopy supplies ensemble evidence even where complete path information is unavailable. Mechanistic knowledge grows through the constraints those observations impose.
+
+Protein folding presents the same problem at the level of conformational pathways. For mechanisms with the same endpoint distribution but different pathway probabilities, endpoint measurements erase the distinction. A time-resolved assay supplies additional evidence through its labels and physical constraints. Its interpretation must connect the measured pathways to the folding process under study.
+
+\subsection{Consciousness and neural organisation}
+
+Neuroscience needs descriptions that retain the relations relevant to behaviour. A population code can depend on timing or joint activity even when individual response averages change little. The evidence for distributed activity and stable latent dynamics supports studying those relations at several scales \citep{stringer2019,gallego2020}. Predictive coordinates locate useful regularities; causal accounts explain how the population sustains them.
+
+For accounts of consciousness grounded in distributed organisation, an intervention that disrupts that organisation changes the object being studied. Loss of a report or behaviour then constrains the account through the relation between the intact and perturbed systems. Preserving function, measuring it and interpreting subjective reports are distinct parts of the inference. The scientific task is to connect evidence across preparations and scales to the organisation that sustains experience.
+
+\subsection{Evolution and ecological interaction}
+
+Evolutionary outcomes depend on inherited state and environmental history. A hypothesis about the probability of an outcome can be testable even where the exact realised path cannot be repeated. A universal claim about a trait, a conditional claim about selection in a particular environment and a reconstruction of a historical event impose different evidential demands. Their shared biological subject does not make them equally accessible.
+
+In ecology, higher-order interactions change coexistence and stability predictions \citep{bairey2016,grilli2017}. Pairwise measurements omit relations expressed only in a larger community. Community composition therefore enters the test itself: results from isolated pairs leave higher-order effects undetermined.
+
+A diversity--stability claim, for example, needs a definition of stability, an environmental regime and a time horizon. Resistance to disturbance and recovery after disturbance ask different questions of the same community. Each supports a test; together they describe more of its organisation than either alone.
+
+\subsection{Living organisation}
+
+Relational accounts of biology emphasise that an organism maintains the processes and constraints that make its activities possible \citep{louie2020,hofmeyr2021}. Removing a component from that organisation can change what it does. Measuring its isolated properties may then leave unanswered how the system sustains its role.
+
+In Hofmeyr's cell model, membrane transport maintains the intracellular milieu needed for folding and assembly. The assembled catalysts and transporters in turn sustain the processes that produce them. These dependencies constitute the cell's organisation.
+
+An inventory of component properties leaves these relations of production, regulation and dependence unspecified. Natural-computation accounts likewise direct attention to the physical organisation through which a living system acts \citep{igamberdiev2021}. A biological explanation must capture how the parts sustain the conditions of their own activity. Testing isolated properties answers only part of that question.
+
+\section{The scope of falsification}
+
+Every empirical test uses a framework: a choice of variables, an observation model and assumptions connecting records to the biological claim. The framework determines which distinctions enter the test. Calibration, alternative instruments and interventions expose those choices to criticism. Different descriptions can answer different questions about the same living system.
+
+If two accounts differ only in relations omitted by the measurement, their agreement with the record leaves those relations undecided. Greater precision in the same observable cannot recover an absent distinction. A new representation helps only if the record already contains relevant information; otherwise a new physical interaction is needed.
+
+The limiting case can be stated directly. Let \(\mathcal A\) be a class of admissible experimental protocols, including permitted sequences of measurements and interventions with adaptive choices based on earlier records. Let \(P_0^a\) and \(P_1^a\) be the probability laws of the complete accessible record under two hypotheses, for protocol \(a\). If
+\begin{equation}
+P_0^a=P_1^a\qquad\text{for every }a\in\mathcal A,
+\label{eq:access}
+\end{equation}
+no decision based on those records can distinguish the hypotheses within \(\mathcal A\). Under equal prior probabilities, its average error is at least one half. This follows because every event in the record has the same probability under both accounts.
+
+The protocol class fixes the reach of this result. Current instruments define a present access limit; protocols preserving a specified organisation define a limit within that intact regime. Impossibility in principle requires coverage of all relevant physically possible protocols, including indirect evidence from destructive interventions. Approximate equality of the record distributions instead calls for a discrimination bound under specified resources.
+
+\paragraph{Scope and open questions.}
+Applying Eq.~\eqref{eq:access} to a living system requires identifying the competing organisations and establishing their indistinguishability over the stated protocol class. The examples here locate losses in particular observations and representations. The central open task is to determine how far those losses persist across protocols that preserve, perturb or reconstruct the biological process.
+
+Biological knowledge exceeds a catalogue of accepted and rejected propositions. Ensemble predictions constrain distributions; mechanistic accounts connect scales; interventions reveal dependencies. Agreement across methods with different measurement assumptions strengthens an account of the organisation that sustains the process. These forms of knowledge give direction to experiments even when a single binary test cannot separate the remaining possibilities.
+
+Falsification is powerful within a description that preserves the distinctions at issue. Treating it as a general criterion for biological knowledge mistakes the reach of that description for the reach of the living system. The experimental task is to recover the relations a projection omits and connect their observable consequences across scales. Biology needs an epistemology equal to that task.
+
+\section*{Author's note}
+This edition was rewritten with AI assistance (Claude, Codex) for drafting, mathematical checking and critical review; the author takes responsibility for the content.
+
+\section*{Funding and competing interests}
+No specific funding supported this work. The author declares no competing interests. No new experimental data are reported.
+
+{\small
+\renewcommand{\bibfont}{\small\raggedright}
+\bibliographystyle{plainnat}
+\bibliography{references}
+}
+\end{document}
